@@ -8,7 +8,7 @@
   --green-700: #388e3c;
   --green-600: #43a047;
   --green-500: #66bb6a;
-  --green-400: #81c784;
+  --green-400: #bbe4bd;
   --green-300: #a5d6a7;
 
   /* Neutral */
@@ -204,6 +204,7 @@ body {
 
 .nav-button {
   display: inline-flex;
+  margin-top: 10px;
   align-items: center;
   justify-content: center;
   min-width: var(--btn-min-width);
@@ -298,7 +299,7 @@ body {
   }
 
   .section-title {
-    font-size: 0.95rem;
+    font-size: 1.4rem;
   }
 
   .nav-button {
