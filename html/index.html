@@ -1,42 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="智慧农业门户网站 - 慧耕耘、慧监测、慧种稻">
-  <title>慧聚良田-高标准农田智慧运营引领者</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <div class="overlay" aria-hidden="true"></div>
-
-  <header class="top-bar">
-    <img class="logo logo--left" src="../assets/project_logo.png" alt="项目标志">
-    <img class="logo logo--right" src="../assets/njau_logo.png" alt="南京农业大学标志">
-  </header>
-
-  <main class="center">
-    <div class="characters" aria-label="神农慧种">
-      <div class="char-slot"><img class="character" src="../assets/character1.png" alt="神"></div>
-      <div class="char-slot"><img class="character" src="../assets/character2.png" alt="农"></div>
-      <div class="char-slot"><img class="character" src="../assets/character3.png" alt="慧"></div>
-      <div class="char-slot"><img class="character" src="../assets/character4.png" alt="种"></div>
-    </div>
-    <p class="tagline">高标准农田智慧运营引领者</p>
-    <p><br></p>
-    <p class="section-title">欢迎体验"神农慧种"系列智能体</p>
-    <nav class="nav-buttons" aria-label="系统导航">
-      <a class="nav-button" href="https://app.smartcrop.cn/workspace" target="_blank" rel="noopener noreferrer">慧耕耘</a>
-      <a class="nav-button" href="http://120.25.178.31/index.html" target="_blank" rel="noopener noreferrer">慧监测</a>
-      <a class="nav-button" href="https://hzd.snfarming.com/" target="_blank" rel="noopener noreferrer">慧种稻</a>
-    </nav>
-  </main>
-
-  <footer class="info">
-    <p class="info__line">项目负责人：徐瀚文</p>
-    <p class="info__line">联系电话：<a class="info__phone" href="tel:13770313035" style="color: inherit; text-decoration: none;">13770313035</a></p>
-    <p class="info__line">公司名称：江苏聚禾农业发展有限公司</p>
-    <p class="info__line">A股上市华设集团子公司（股票代码：603018.SH）</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="神农慧种系列智能体：连接农田运营、农业监测与水稻生产咨询。"
+    />
+    <title>神农慧种 · 农业智能体平台</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/portal.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#agents">跳至智能体中心</a>
+    <header class="topbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark" aria-hidden="true">禾</span
+        ><span>神农慧种<small>农业智能体平台</small></span></a
+      >
+      <nav aria-label="主导航">
+        <a class="active" href="#agents">智能体中心</a
+        ><a href="#guide">使用指南</a>
+      </nav>
+      <span class="header-note">让智能服务每一片良田</span>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">SHENNONG · INTELLIGENCE FOR AGRICULTURE</span>
+          <h1>让专业智能，<br />扎根农业生产<span>。</span></h1>
+          <p>
+            从农田运营到生产咨询，找到适合您的专业智能体，<br
+              class="desktop"
+            />让每一个农业问题，都有清晰的下一步。
+          </p>
+          <a class="primary" href="#agents"
+            >探索专业智能体 <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="hero-caption">立足田间 · 服务生产</div>
+      </section>
+      <section id="agents" aria-labelledby="agents-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">AGENT CENTER</span>
+            <h2 id="agents-title">专业智能体</h2>
+            <p>按您的工作场景，选择专业服务</p>
+          </div>
+          <label class="search"
+            ><span aria-hidden="true">⌕</span
+            ><input
+              id="search"
+              type="search"
+              placeholder="搜索智能体或业务场景"
+              aria-label="搜索智能体或业务场景"
+          /></label>
+        </div>
+        <div class="filters" aria-label="按场景筛选">
+          <button
+            type="button"
+            class="selected"
+            aria-pressed="true"
+            data-filter="all"
+          >
+            全部智能体</button
+          ><button type="button" aria-pressed="false" data-filter="production">
+            种植管理</button
+          ><button type="button" aria-pressed="false" data-filter="monitoring">
+            农田监测</button
+          ><button type="button" aria-pressed="false" data-filter="operations">
+            农田运营
+          </button>
+        </div>
+        <div class="cards">
+          <article class="agent-card featured" data-category="production">
+            <div class="card-art rice">
+              <span>水稻生产</span><b aria-hidden="true">禾</b>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>慧种稻</h3>
+                <span class="badge">专业咨询</span>
+              </div>
+              <p class="subtitle">水稻生产智能体</p>
+              <p class="description">
+                描述田间问题，结合专业资料，探索适合您的种植与管理建议。
+              </p>
+              <div class="tags">
+                <span>品种咨询</span><span>病虫害咨询</span
+                ><span>水肥管理</span>
+              </div>
+              <a
+                class="primary agent-link"
+                data-agent="rice"
+                href="https://hzd.snfarming.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >进入慧种稻 <span aria-hidden="true">↗</span
+                ><span class="sr-only">（新窗口）</span></a
+              >
+            </div>
+          </article>
+          <article class="agent-card" data-category="operations">
+            <div class="card-art operations">
+              <span>农田运营</span><b aria-hidden="true">田</b>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>慧耕耘</h3>
+                <span class="badge">业务平台</span>
+              </div>
+              <p class="subtitle">农田智慧运营入口</p>
+              <p class="description">
+                连接农业生产与运营工作空间，让农田管理工作有序开展。
+              </p>
+              <div class="tags"><span>生产管理</span><span>农田运营</span></div>
+              <a
+                class="secondary agent-link"
+                data-agent="operations"
+                href="https://app.smartcrop.cn/workspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                >进入慧耕耘 <span aria-hidden="true">↗</span
+                ><span class="sr-only">（新窗口）</span></a
+              >
+            </div>
+          </article>
+          <article class="agent-card" data-category="monitoring">
+            <div class="card-art monitoring">
+              <span>农业监测</span><b aria-hidden="true">◎</b>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>慧监测</h3>
+                <span class="badge">业务平台</span>
+              </div>
+              <p class="subtitle">农业监测服务入口</p>
+              <p class="description">
+                进入农田监测平台，了解田间情况，为生产管理提供参考。
+              </p>
+              <div class="tags"><span>田间监测</span><span>农情信息</span></div>
+              <a
+                class="secondary agent-link"
+                data-agent="monitoring"
+                href="http://120.25.178.31/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >进入慧监测 <span aria-hidden="true">↗</span
+                ><span class="sr-only">（新窗口）</span></a
+              >
+            </div>
+          </article>
+        </div>
+        <p id="results" class="result-count" role="status" aria-live="polite">
+          共 3 个智能体
+        </p>
+        <div id="empty" hidden class="empty">
+          未找到匹配的智能体，请尝试“水稻”“监测”或清空筛选。<button
+            id="reset"
+            type="button"
+          >
+            重置筛选
+          </button>
+        </div>
+      </section>
+      <section class="recent">
+        <div class="section-heading">
+          <div>
+            <h2>最近访问</h2>
+            <p>快速回到您使用过的智能体</p>
+          </div>
+          <button id="clear-history" type="button" class="text-button" hidden>
+            清空记录
+          </button>
+        </div>
+        <div id="recent-list">
+          <p class="empty-copy">
+            暂无访问记录。选择一个智能体，开始您的农业任务。
+          </p>
+        </div>
+        <small>仅保存在当前浏览器；具体任务记录请进入对应智能体查看。</small>
+      </section>
+      <section id="guide" class="guide">
+        <div>
+          <span class="eyebrow">GET STARTED</span>
+          <h2>从一个问题，开始专业工作</h2>
+        </div>
+        <ol>
+          <li>
+            <b>01</b
+            ><span
+              ><strong>选择业务场景</strong>找到与当前工作匹配的智能体</span
+            >
+          </li>
+          <li>
+            <b>02</b
+            ><span><strong>补充田间信息</strong>提供地区、作物和具体问题</span>
+          </li>
+          <li>
+            <b>03</b
+            ><span
+              ><strong>查看建议与依据</strong>结合实际情况，完善下一步行动</span
+            >
+          </li>
+        </ol>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-brand">神农慧种 <span>专业智能 · 扎根农业</span></div>
+      <div>
+        江苏聚禾农业发展有限公司<br /><small
+          >A股上市华设集团子公司（股票代码：603018.SH）</small
+        >
+      </div>
+      <div>
+        项目负责人：徐瀚文<br /><a href="tel:13770313035"
+          >联系电话：13770313035</a
+        >
+      </div>
+    </footer>
+  </body>
 </html>
