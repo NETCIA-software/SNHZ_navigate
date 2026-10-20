@@ -1,4 +1,56 @@
 'use strict';
+document.documentElement.classList.add('js');
+
+const navigation = document.querySelector('#primary-navigation');
+const navToggle = document.querySelector('.nav-toggle');
+const menuItems = [...document.querySelectorAll('.nav-item')];
+const menuTriggers = [...document.querySelectorAll('.nav-trigger')];
+
+function closeMenus(except) {
+  menuItems.forEach((item) => {
+    if (item === except) return;
+    item.classList.remove('is-open');
+    item.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
+  });
+}
+
+menuTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const item = trigger.closest('.nav-item');
+    const willOpen = !item.classList.contains('is-open');
+    closeMenus(item);
+    item.classList.toggle('is-open', willOpen);
+    trigger.setAttribute('aria-expanded', String(willOpen));
+  });
+});
+
+navToggle?.addEventListener('click', () => {
+  const willOpen = !navigation.classList.contains('is-open');
+  navigation.classList.toggle('is-open', willOpen);
+  navToggle.setAttribute('aria-expanded', String(willOpen));
+  if (!willOpen) closeMenus();
+});
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.primary-navigation')) closeMenus();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  const openTrigger = document.querySelector('.nav-item.is-open .nav-trigger');
+  closeMenus();
+  openTrigger?.focus();
+});
+
+navigation?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    closeMenus();
+    navigation.classList.remove('is-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  });
+});
+
 // Update destinations on the anchors in html/index.html when services move.
 const cards = [...document.querySelectorAll('.agent-card')];
 const search = document.querySelector('#search');
@@ -102,3 +154,9 @@ document.querySelector('#clear-history').addEventListener('click', () => {
   saveHistory();
 });
 renderHistory();
+
+// Fall back to the same robot's still frame if the animated asset fails.
+const brandImage = document.querySelector('.brand-mark img');
+brandImage?.addEventListener('error', () => {
+  brandImage.closest('picture')?.querySelector('source')?.remove();
+}, { once: true });
